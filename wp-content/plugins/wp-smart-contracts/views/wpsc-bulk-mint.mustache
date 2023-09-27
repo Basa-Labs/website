@@ -1,0 +1,799 @@
+<p>&nbsp;</p>
+
+<style>
+  .wpsc-wizard-card .extra.content.wpsc-small {
+    color: green;
+    font-weight: 500;
+  }
+
+  #wpsc-bulk-table td {
+    width: 16%;
+  }
+</style>
+
+<div class="ui">
+  {{^log_content}}
+  <div class="ui inverted segment" style="min-height: 140px;">
+    <img src="{{wizard02}}" class="ui tiny centered circular image">
+    <h1 class="ui header" style="text-align: center;">Batch Mint NFT Wizard</h1>
+  </div>
+  <div class="ui teal segment">
+    <h3 class="ui header">Bulk Minting in four easy steps</h3>
+    <p>You can create multiple NFTs in one single and intuitive process.</p>
+  </div>
+  {{/log_content}}
+
+  <div class="ui basic segment deployer-connect-with-metamask-div" style="display: none;">
+    <p>
+      <img src="{{fox}}" class="ui small left floated image">
+      {{{text}}}
+    </p>
+    <a class="ui big blue button" id="connect-metamask-in-admin">
+      {{{connect-to-metamask}}}
+    </a>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+
+  {{#step1}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="active step">
+        <div class="content">
+          <div class="title">Upload CSV</div>
+          <div class="description">Upload your NFT data</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Save Media</div>
+          <div class="description">Store files in the media library</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Create NFTs</div>
+          <div class="description">Create NFT Items</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Mint</div>
+          <div class="description">Batch Mint</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="ui dividing header">
+      Bulk Mint Process
+    </h3>
+
+    <div class="ui placeholder segment">
+      <div class="ui two column stackable grid">
+        <div class="ui vertical divider">Or</div>
+        <div class="middle aligned row">
+          <div class="column">
+            <form id="form_wizard_step_1" action="{{action}}" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="step" value="2">
+              <input type="hidden" name="unique-id" value="{{unique-id}}">
+              <input type="hidden" id="wpsc-rest-url" name="rest_url" value="{{rest_url}}">
+              <input type="hidden" id="wpsc-nonce" name="nonce" value="{{nonce}}">          
+              <div class="ui stackable grid">
+                <div class="seven wide column">
+                  <h4 class="ui header">
+                    Data
+                    <div class="sub header">
+                      Choose CSV File
+                    </div>
+                  </h4>  
+                  <p>
+                    <input type="file" id="wpsc-csv" name="wpsc-csv" accept="text/csv" style="font-size: 18px;">
+                  </p>
+                  <div id="wpsc_step1_warning2" class="ui warning message" style="display: none;">
+                    Please choose a CSV file to continue
+                  </div>
+                </div>
+                <div class="four wide column wpsc-small">
+                  <h4 class="ui header">
+                    CSV Format
+                    <div class="sub header">
+                      CSV Field Separator
+                    </div>
+                  </h4>  
+                  <div class="field" style="text-align: left;">
+                    <input type="text" name="csv-field" value=";" size="1">
+                  </div>
+                </div>
+                <div class="four wide column wpsc-small">
+                  <h4 class="ui header">
+                    &nbsp;
+                    <div class="sub header">
+                      Taxonomy separator
+                    </div>
+                  </h4>  
+                  <div class="field" style="text-align: left;">
+                    <input type="text" name="csv-tax" value="," size="1">
+                  </div>
+                </div>
+              </div>
+              <div class="ui divider"></div>
+              <div class="ui two column stackable grid">
+                <div class="column">
+                  <h4 class="ui header">
+                    IPFS
+                    <div class="sub header">
+                      Do you want to store media on IPFS?
+                    </div>
+                  </h4>  
+                  <div class="ui toggle checkbox">
+                    <input type="checkbox" name="wpsc-ipfs" id="wpsc-ipfs" class="wpsc-radio-nft" value="ipfs">
+                    <label class="wpsc-small">Save media to IPFS</label>
+                  </div>
+                </div>
+                <div class="column">
+                  <h4 class="ui header">
+                    Collection
+                    <div class="sub header">
+                      Select the collection where you want to add the items
+                    </div>
+                  </h4>
+                  <div class="ui dropdown labeled icon button" style="max-width: 16rem!important;" tabindex="0">
+                    <input type="hidden" id="wpsc-choose-collection-hidden" name="wpsc-choose-collection-value">
+                    <i class="database icon"></i>
+                    <span class="text"
+                      style="width: 130px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-size: 12px;">Choose
+                      a Collection</span>
+                    <div class="menu transition hidden" tabindex="-1">
+                      <div class="scrolling menu">
+                        {{#collections}}
+                        <div class="item" data-value="{{ID}}">
+                          <div class="ui {{network_color}} label">{{network_name}}</div>
+                          {{{post_title}}}
+                        </div>
+                        {{/collections}}
+                        {{^collections}}
+                        <div class="item">
+                          No collection found, please create a collection first
+                        </div>
+                        {{/collections}}
+                      </div>
+                    </div>
+                  </div>
+                  <p>Only deployed Yuzu collections are available for Bulk Minting</p>
+                  <div id="wpsc_step1_warning" class="ui warning message" style="display: none;">
+                    Please choose a collection to continue
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="ui two column stackable grid">
+                <div class="column">
+
+                  <h4 class="ui header">
+                    NFT Author
+                    <div class="sub header">
+                      Choose the author of the NFTs
+                    </div>
+                  </h4>
+
+                  <div class="ui dropdown labeled icon button" tabindex="0">
+                    <input type="hidden" id="wpsc-owner-user-hidden" name="wpsc-owner-user">
+                    <i class="user icon"></i>
+                    <span class="text">Choose a user</span>
+                    <div class="menu transition hidden" tabindex="-1">
+                      <div class="scrolling menu">
+                        {{#users}}
+                        <div class="item" data-value="{{ID}}">
+                          {{{display_name}}} {{#roles}}<span class="ui label">{{.}}</span>{{/roles}}
+                        </div>
+                        {{/users}}
+                      </div>
+                    </div>
+                  </div>
+                  <div id="wpsc_step5_warning" class="ui warning message" style="display: none;">
+                    Please specify the author for NFTs
+                  </div>
+                  <div id="wpsc_step6_warning" class="ui warning message" style="display: none;">
+                    The user and the selected collection are not compatible. Verify that the selected user's role and the authorized roles in the collection match.
+                  </div>
+                </div>
+                <div class="column">
+
+                  <div id="wpsc-owner-address-div">
+                    <h4 class="ui header">
+                      Owner blockchain address
+                      <div class="sub header">
+                        The address to which the minted items will be assigned
+                      </div>
+                    </h4>
+                    <div class="ui fluid icon input">
+                      <input id="wpsc-owner-address" name="wpsc-owner-address" type="text" value="">
+                      <i class="ethereum icon"></i>
+                    </div>
+                    <div id="wpsc_step4_warning" class="ui warning message" style="display: none;">
+                      Please specify a valid EVM address
+                    </div>
+                  </div>    
+
+                </div>
+              </div>
+
+              <p>
+                <input type="submit" class="ui primary button" value="Start">
+              </p>
+
+            </form>
+
+          </div>
+          <div class="column center aligned ">
+            <div class="ui icon header">
+              Create an ERC-1155 Collection
+            </div>
+            <a href="{{create_erc1155}}" class="ui primary button">
+              Create a Collection
+            </a>
+            <p>You will be redirected to the Smart Contracts Wizard.</p>
+            <p>Don't forget to choose the Yuzu or Ikasumi flavor. These are the only contracts that support bulk
+              minting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {{/step1}}
+
+  {{#step2}}
+  <div class="ui segment">
+
+    <input type="hidden" id="collection_id" name="collection_id" value="{{collection_id}}">
+    <input type="hidden" id="wpsc-owner-address" name="wpsc-owner-address" value="{{wpsc_owner_address}}">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Upload CSV</div>
+          <div class="description">Upload your NFT data</div>
+        </div>
+      </div>
+      <div class="active step">
+        <div class="content">
+          <div class="title">Save Media</div>
+          <div class="description">Store files in the media library</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Create NFTs</div>
+          <div class="description">Create NFT Items</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Mint</div>
+          <div class="description">Batch Mint</div>
+        </div>
+      </div>
+    </div>
+
+    {{#there-are-errors}}
+    <div class="ui icon warning message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          Warning
+        </div>
+        {{#errors}}
+        <p>{{.}}</p>
+        {{/errors}}
+      </div>
+    </div>
+    {{/there-are-errors}}
+
+
+    <div class="ui secondary segment step3-hide">
+      <h3 class="ui dividing header">
+        Selected Collection
+      </h3>
+      <div class="ui stackable two column grid">
+        <div class="column">
+
+          <div class="ui raised centered card">
+            <div class="ui bottom right attached label">Selected Collection</div>
+            <div class="image">
+              <img src="{{wpsc_blockie}}">
+            </div>
+            <div class="content">
+              <div class="header">{{{post_title}}}</div>
+              <div class="meta">
+                <span class="ui {{wpsc_flavor_color}} label">{{wpsc_flavor}}</span>
+                <span class="ui {{network_color}} label">{{network_name}}</span>
+              </div>
+              <div class="description">
+                <p>
+                  Smart Contract
+                  <a href="{{wpsc_network_etherscan}}/address/{{wpsc_collection_contract}}"
+                    target="_blank">{{wpsc-short-contract}}</a>
+                </p>
+              </div>
+            </div>
+            <div class="extra content">
+              <span>
+                <i class="tag icon"></i>
+                {{wpsc_name}} ({{wpsc_symbol}})
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="column">
+
+          <h3 class="ui dividing header">
+            Processing media
+          </h3>
+
+          <div id="wpsc-wait-process" class="ui warning message">
+            <div class="header">
+              Please wait for the process to finish.
+            </div>
+            <p>This page can be automatically reloaded a few times, but please do not close or reload this page
+              yourself.</p>
+            <p><span id="wpsc-step-info"></span></p>
+          </div>
+
+          <div id="wpsc-progress" class="ui teal progress">
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+            <div class="label">Processing</div>
+          </div>
+
+          <div id="wpsc-log-div"
+            style="max-height: 300px;overflow-y: scroll; font-family: monospace; font-size: 10px; display: none;">
+            {{{log}}}</div>
+
+          <div id="wpsc-wait-finish" class="ui positive message" style="display: none;">
+            <div class="header">
+              Media processing completed
+            </div>
+            <p>You can continue now.</p>
+          </div>
+
+          <div id="wpsc-log-wizard"></div>
+
+          <div id="wpsc-progress-finish"></div>
+          <div id="wpsc-ajax-stop" style="display: none;"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ui secondary segment step4-show" style="display: none;">
+      <h3 class="ui dividing header">
+        Add data and attributes to each item
+        <div class="sub header">In this screen you can edit the quantity you want to mint and all
+          attributes for each item</div>
+      </h3>
+      <div id="wpsc-nft-media-preview-media-real"></div>
+    </div>
+
+  </div>
+  {{/step2}}
+
+  {{#step3}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Upload CSV</div>
+          <div class="description">Upload your NFT data</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Save Media</div>
+          <div class="description">Store files in the media library</div>
+        </div>
+      </div>
+      <div class="active step">
+        <div class="content">
+          <div class="title">Create NFTs</div>
+          <div class="description">Create NFT Items</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">Mint</div>
+          <div class="description">Batch Mint</div>
+        </div>
+      </div>
+    </div>
+
+    {{#there-are-errors}}
+    <div class="ui icon warning message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          Warning
+        </div>
+        {{#errors}}
+        <p>{{.}}</p>
+        {{/errors}}
+      </div>
+    </div>
+    {{/there-are-errors}}
+
+
+    {{^there-are-errors}}
+    <div class="ui secondary segment step3-hide">
+      <h3 class="ui dividing header">
+        Create NFT Items
+      </h3>
+      <div class="ui stackable two column grid">
+        <div class="column">
+
+          <div class="ui raised centered card">
+            <div class="ui bottom right attached label">Selected Collection</div>
+            <div class="image">
+              <img src="{{wpsc_blockie}}">
+            </div>
+            <div class="content">
+              <div class="header">{{{post_title}}}</div>
+              <div class="meta">
+                <span class="ui {{wpsc_flavor_color}} label">{{wpsc_flavor}}</span>
+                <span class="ui {{network_color}} label">{{network_name}}</span>
+              </div>
+              <div class="description">
+                <p>
+                  Smart Contract
+                  <a href="{{wpsc_network_etherscan}}/address/{{wpsc_collection_contract}}"
+                    target="_blank">{{wpsc-short-contract}}</a>
+                </p>
+              </div>
+            </div>
+            <div class="extra content">
+              <span>
+                <i class="tag icon"></i>
+                {{wpsc_name}} ({{wpsc_symbol}})
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="column">
+
+          <h3 class="ui dividing header">
+            Creating NFT Items
+          </h3>
+
+          <div id="wpsc-wait-process" class="ui warning message">
+            <div class="header">
+              Please wait for the process to finish.
+            </div>
+            <p>This page can be automatically reloaded a few times, but please do not close or reload this page
+              yourself.</p>
+            <p><span id="wpsc-step-info"></span></p>
+          </div>
+
+          <div id="wpsc-progress" class="ui teal progress">
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+            <div class="label">Processing</div>
+          </div>
+
+          <div id="wpsc-wait-finish" class="ui positive message" style="display: none;">
+            <div class="header">
+              NFT Creation completed
+            </div>
+            <p>You can continue now.</p>
+          </div>
+
+          <div id="wpsc-log-wizard"></div>
+
+          {{#wpsc-galleries-error}}	
+            <div id="wpsc-wait-finish-errors" class="ui warning mini message" style="display: none;"></div>	
+          {{/wpsc-galleries-error}}
+
+          <div id="wpsc-progress-finish"></div>
+          <div id="wpsc-ajax-stop" style="display: none;"></div>
+
+
+        </div>
+      </div>
+    </div>
+    {{/there-are-errors}}
+
+  </div>
+  {{/step3}}
+
+  {{#step4}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Upload CSV</div>
+          <div class="description">Upload your NFT data</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Save Media</div>
+          <div class="description">Store files in the media library</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">Create NFTs</div>
+          <div class="description">Create NFT Items</div>
+        </div>
+      </div>
+      <div id="wpsc-menu-last-step" class="active step">
+        <div class="content">
+          <div class="title">Mint</div>
+          <div class="description">Batch Mint</div>
+        </div>
+      </div>
+    </div>
+
+    {{#there-are-errors}}
+    <div class="ui icon warning message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          Warning
+        </div>
+        {{#errors}}
+        <p>{{.}}</p>
+        {{/errors}}
+      </div>
+    </div>
+    {{/there-are-errors}}
+
+
+    {{^there-are-errors}}
+    <div class="ui secondary segment step3-hide">
+      <h3 class="ui dividing header">
+        Batch Mint
+      </h3>
+      <div class="ui stackable two column grid">
+        <div class="column">
+
+          <input type="hidden" id="wpsc-smart-contract-address" value="{{wpsc_collection_contract}}">
+          <input type="hidden" id="collection_id" name="collection_id" value="{{collection_id}}">
+          <input type="hidden" id="wpsc-network" name="wpsc_network" value="{{wpsc_network}}">
+          <input type="hidden" id="wpsc-rest-url" name="rest_url" value="{{rest_url}}">
+          <input type="hidden" id="wpsc-nonce" name="rest_nonce" value="{{nonce}}">
+          <input type="hidden" id="wpsc-owner-user" name="rest_nonce" value="{{wpsc_owner_user}}">
+          <input type="hidden" id="wpsc-owner-address" name="wpsc-owner-address" value="{{wpsc_owner_address}}">
+          
+          <div class="ui raised centered card">
+            <div class="ui bottom right attached label">Selected Collection</div>
+            <div class="image">
+              <img src="{{wpsc_blockie}}">
+            </div>
+            <div class="content">
+              <div class="header">{{{post_title}}}</div>
+              <div class="meta">
+                <span class="ui {{wpsc_flavor_color}} label">{{wpsc_flavor}}</span>
+                <span id="wpsc-the-network-name" class="ui {{network_color}} label">{{network_name}}</span>
+              </div>
+              <div class="description">
+                <p>
+                  Smart Contract
+                  <a href="{{wpsc_network_etherscan}}/address/{{wpsc_collection_contract}}"
+                    target="_blank">{{wpsc-short-contract}}</a>
+                </p>
+              </div>
+            </div>
+            <div class="extra content">
+              <span>
+                <i class="tag icon"></i>
+                {{wpsc_name}} ({{wpsc_symbol}})
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="column">
+
+          <h3 class="ui dividing header">
+            Mint NFT Items
+          </h3>
+
+          {{^show-collection-url}}
+
+          <div id="wpsc-wait-process" class="ui warning message">
+            <p>Click the "Mint Batch" buttons successively until the process is complete</p>
+            <p><span id="wpsc-step-info"></span></p>
+          </div>
+
+          <div id="wpsc-progress" class="ui teal progress">
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+            <div class="label">Processing</div>
+          </div>
+
+          <div id="wpsc-wait-finish" class="ui positive message" style="display: none;">
+            <div class="header">
+              NFT Creation completed
+            </div>
+            <p>You can continue now.</p>
+          </div>
+
+          <div id="wpsc-log-wizard"></div>
+
+          <div id="wpsc-progress-finish"></div>
+
+          <div class="ui divider"></div>
+
+          {{/show-collection-url}}
+
+          {{#buttons}}
+          <div id="batch-mint-{{index}}" data-ids="{{ids}}" data-qty="{{qty}}" data-percent="{{percent}}"
+            data-me="{{index}}" {{#next}}data-next="{{next}}" {{/next}} class="ui primary button wpsc-batch-mint"
+            {{^first}}style="display:none" {{/first}}>{{{title}}}
+          </div>
+          {{/buttons}}
+
+          {{#show-lazy-info}}
+          <div class="ui info message">
+            <p>If you are planning to use Lazy Minting you can skip this minting process</p>
+            <p><span id="wpsc-step-info"></span></p>
+          </div>
+          {{/show-lazy-info}}
+
+          <div id="wpsc-deployer-warning"></div>
+          
+          <div id="wpsc-animated" class="ui black message" style="display: none">
+            <div class="ui center aligned inverted header">
+              <img src="{{animated}}" class="ui mini centered image">
+              Transaction in progress
+            </div>
+            <p>If you agree and wish to proceed, please click "CONFIRM" transaction in your wallet, otherwise click "REJECT". Please be patient. It can take several minutes. Don't close or reload this window.</p>
+            <p><strong>After the transaction is finished, please wait for the database to be updated.</strong></p>
+          </div>
+
+          <div id="wpsc-finalization" class="ui info message" {{^show-collection-url}}style="display: none;"{{/show-collection-url}}>
+            <div class="header">
+              {{#show-collection-url}}
+                All items are already minted
+              {{/show-collection-url}}
+              {{^show-collection-url}}
+                Batch Mint Finished
+              {{/show-collection-url}}
+            </div>
+            <p><a href="{{collection-url}}" target="_blank">Go to the collection</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {{/there-are-errors}}
+
+  </div>
+  {{/step4}}
+
+  {{^edit_url}}
+  {{^log_content}}
+
+  <div class="ui bottom attached warning message">
+    <i class="icon help"></i>
+    Need help? <a href="https://wpsmartcontracts.com/docs/doc-item-mint-batch.php" target="_blank">read the documentation</a>.
+  </div>
+
+  {{/log_content}}
+  {{/edit_url}}
+
+</div>
+
+<script>
+  jQuery('.ui.sticky')
+    .sticky({
+      context: '#wpsc-networks'
+    })
+    ;
+</script>
+
+<div id="wpsc-deploy-contract-batch" class="ui basic modal">
+
+  <span id="wpsc-deploy-contract-image"></span>
+  <h4 class="ui header">
+    <i class="tint icon"></i>
+    <div class="content">
+      {{{ethereum-deploy}}}
+      <span id="wpsc-deployer-ethereum-network" class="ui label"></span>
+    </div>
+    <span id="wpsc-nft-information" class="ui inverted header centered"></span>
+  </h4>
+
+  <div id="wpsc-deployer-warning"></div>
+
+  <div id="wpsc-nft-mint-div">
+
+    <div class="ui icon warning message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          {{{warning-2}}}
+        </div>
+        <p>{{{warning-1}}}</p>
+      </div>
+    </div>
+
+    <h3 class="ui inverted header">{{{warning-3}}}</h3>
+    <div class="ui inverted header" id="erc-1155-supply-div"></div>
+
+  </div>
+
+  <div class="actions">
+    <div id="wpsc-deploy-cancel-button" class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>{{{no-letme-check}}}
+    </div>
+    <div id="wpsc-deploy-ok-mint-batch" class="ui green inverted button" data-type="nft-collection">
+      <i class="checkmark icon"></i>
+      {{{yes-proceed}}}
+    </div>
+  </div>
+
+</div>
+
+{{#edit_url}}
+
+<table>
+  <thead>
+    <th>Post ID</th>
+    <th>NFT Item</th>
+  </thead>
+  {{#log_content}}
+    {{#post_id}}
+      <tr>
+        <td><a href="{{edit_url}}{{post_id}}" target="_blank">{{post_id}}</a></td>
+        <td><a href="{{edit_url}}{{post_id}}" target="_blank">{{2}}</a></td>
+      </tr>
+    {{/post_id}}
+    {{^post_id}}
+      <tr>
+        <td></td>
+        <td>{{2}}: <span style="color: red">An error ocurred creating the post</td>
+      </tr>
+    {{/post_id}}
+  {{/log_content}}
+</table>
+
+<script>
+  jQuery("[id=wpadminbar]:eq(1)").hide();
+  jQuery("[id=adminmenuback]:eq(1)").hide();
+  jQuery("[id=adminmenuwrap]:eq(1)").hide();
+  jQuery("[id=footer-left]:eq(1)").hide();
+  jQuery("[id=footer-upgrade]:eq(1)").hide();
+  jQuery("[id=footer-thankyou]:eq(1)").hide();  
+</script>
+
+{{/edit_url}}
+
+{{^edit_url}}
+
+{{#log_content}}
+
+<script>
+  jQuery("[id=wpadminbar]:eq(1)").hide();
+  jQuery("[id=adminmenuback]:eq(1)").hide();
+  jQuery("[id=adminmenuwrap]:eq(1)").hide();
+  jQuery("[id=footer-left]:eq(1)").hide();
+  jQuery("[id=footer-upgrade]:eq(1)").hide();
+  jQuery("[id=footer-thankyou]:eq(1)").hide();  
+</script>
+
+<h1>Log results</h1>
+{{{log_content}}}
+
+{{/log_content}}
+
+{{/edit_url}}

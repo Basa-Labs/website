@@ -1,0 +1,728 @@
+<div id="wpsc-setup-wizard" class="ui">
+
+  <style>
+    .wps-notice-row h1 {color: #ff017b; font-size: 40px;font-weight: 700;line-height: 1.5;margin:15px 0}
+    .wps-notice-row h2 {color: #ff017b; font-size: 23px;line-height: 1.5}
+  </style>
+
+  <div class="wps-notice-row" style="background-image: radial-gradient(circle at 1.7% 12%, #f0daff 0, #bff7f5 43%, #ffe1f2 87%, #ffffff 127%);padding: 35px 35px 20px 35px;border-radius:40px">
+    <h1>Welcome to WP Smart Contracts 2.0</h1>
+    <h2>In this wizard, we will guide you through the setup steps</h2>
+  </div>
+
+  {{#step1}}
+  <div class="ui info huge message">
+    <p><a href="https://wpsmartcontracts.com/docs/doc-settings-skins.php" target="_blank">Click here to see a demo of all skins</a></a></p>
+  </div>
+  
+  <div class="ui segment">
+    <div class="ui four ordered steps">
+      <div class="active step">
+        <div class="content">
+          <div class="title">{{skin}}</div>
+          <div class="description">{{skin-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{launcher}}</div>
+          <div class="description">{{launcher-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{nft}}</div>
+          <div class="description">{{nft-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{coin}}</div>
+          <div class="description">{{coin-desc}}</div>
+        </div>
+      </div>
+    </div>
+
+    <form method="post">
+
+      {{#full_screen}}<input type="hidden" name="fs" value="true">{{/full_screen}}
+
+      <div class="ui stackable grid">
+        <div class="six wide column wpsc-setup-wizard-img-container">
+          <img src="{{img}}" class="ui image">
+          {{#full_screen}}
+          <div class="ui info message">
+            <p>Thank you, I will setup this later on.</p>
+            <p><a href="{{forward-url}}">Please close the wizard</a></p>
+          </div>
+          {{/full_screen}}
+        </div>
+        <div class="ten wide column">
+          {{{skins}}}
+          <input type="hidden" name="step" value="2">
+        </div>
+        <div class="eight wide column">
+        </div>
+        <div class="eight wide column">
+          <p class="submit">
+            <input type="submit" name="submit" id="submit" class="ui blue huge right floated button" value="Next">
+          </p>
+        </div>
+      </div>
+
+      <p>&nbsp;</p>
+
+    </form>
+
+  </div>
+  {{/step1}}
+
+  {{#step2}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{skin}}</div>
+          <div class="description">{{skin-desc}}</div>
+        </div>
+      </div>
+      <div class="active step">
+        <div class="content">
+          <div class="title">{{launcher}}</div>
+          <div class="description">{{launcher-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{nft}}</div>
+          <div class="description">{{nft-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{coin}}</div>
+          <div class="description">{{coin-desc}}</div>
+        </div>
+      </div>
+    </div>
+
+    <form method="post" onsubmit="return wpscValidateForm()">
+
+      {{#full_screen}}<input type="hidden" name="fs" value="true">{{/full_screen}}
+      
+      <div class="ui stackable grid">
+        <div class="six wide column">
+          <img src="{{img}}" class="ui image">
+          {{#full_screen}}
+          <div class="ui info message">
+            <p>Thank you, I will setup this later on.</p>
+            <p><a href="{{forward-url}}">Please close the wizard</a></p>
+          </div>
+          {{/full_screen}}
+        </div>
+        <div class="ten wide column">
+
+          <h3 class="ui dividing header">
+            Activate the Launcher
+          </h3>
+
+          <p>If you activate the Launcher, you will have access to the following pages and options:</p>
+          <div class="ui bulleted list">
+            <div class="item">Launcher Pages</div>
+            <div class="item">Affiliate Program</div>
+            <div class="item">Smart Contract Wizard</div>
+          </div>
+          <p>The Wizard and Launcher pages will be available for you to use.</p>
+
+          <div class="ui info mini message">
+            <div class="header">
+              Important Notice
+            </div>
+            When the launcher is activated, several pages titled "Wizard..." and "Launcher..." will be created to facilitate the functionality of the launcher and wizard. Please note that these pages will be recreated persistently unless you deactivate the launcher and manually remove them.
+          </div>
+          
+            <div class="ui toggle {{#launcher-active}}checked{{/launcher-active}} checkbox">
+              <input type="checkbox"  id="wpsc-activate-launcher" name="wpsc_activate_launcher" {{#launcher-checked}}checked=""{{/launcher-checked}} onclick="wpsToggleTOS()">
+              <label>Check the box to activate the Launcher Pages, Affiliate Program, and Smart Contracts Wizard</label>
+            </div>
+
+          <div id="affp" {{^launcher-checked}}style="display:none"{{/launcher-checked}}>
+            <p>&nbsp;</p>
+            <h3 class="ui dividing header">
+              Affiliate Program
+            </h3>
+
+            <div class="ui basic segment">
+              <input type="hidden" name="go" value="1">
+              <div class="header">
+                Enter the wallet to receive commissions in each network
+              </div>
+              <p>This is the wallet where you are going to receive your earnings from the affiliate program</p>
+              <p><strong>Ethereum</strong></p>
+              <input type="checkbox" id="disabled-ethereum" name="disabled-ethereum" value="enabled" {{#disabled_ethereum}}checked{{/disabled_ethereum}}> <label for="disabled-ethereum"> Disable Ethereum</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_1" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_1}}" style="max-width:500px">
+              </div>
+              <p><strong>Arbitrum One</strong></p>
+              <input type="checkbox" id="disabled-arbitrum" name="disabled-arbitrum" value="enabled" {{#disabled_arbitrum}}checked{{/disabled_arbitrum}}> <label for="disabled-arbitrum"> Disable Arbitrum One</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_42161" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_42161}}" style="max-width:500px">
+              </div>
+              <p><strong>Binance Smart Chain</strong></p>
+              <input type="checkbox" id="disabled-bsc" name="disabled-bsc" value="enabled" {{#disabled_bsc}}checked{{/disabled_bsc}}> <label for="disabled-bsc"> Disable Binance Smart Chain</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_56" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_56}}" style="max-width:500px">
+              </div>
+              <p><strong>Polygon</strong></p>
+              <input type="checkbox" id="disabled-polygon" name="disabled-polygon" value="enabled" {{#disabled_polygon}}checked{{/disabled_polygon}}> <label for="disabled-polygon"> Disable Polygon</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_137" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_137}}" style="max-width:500px">
+              </div>
+              <p><strong>AVAX</strong></p>
+              <input type="checkbox" id="disabled-avax" name="disabled-avax" value="enabled" {{#disabled_avax}}checked{{/disabled_avax}}> <label for="disabled-avax"> Disable Avalanche</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_43114" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_43114}}" style="max-width:500px">
+              </div>
+              <p><strong>Fantom</strong></p>
+              <input type="checkbox" id="disabled-fantom" name="disabled-fantom" value="enabled" {{#disabled_fantom}}checked{{/disabled_fantom}}> <label for="disabled-fantom"> Disable Fantom</label>
+              <div class="ui fluid icon input">
+                <input name="affp_wallet_250" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_250}}" style="max-width:500px">
+              </div>
+
+              <p><strong>Test Networks</strong></p>
+              <p>
+                <input type="checkbox" id="disabled-test" name="disabled-test" value="enabled" {{#disabled_test}}checked{{/disabled_test}}> <label for="disabled-test"> Disable Testnetworks</label>
+              </p>
+
+            </div>
+
+            <h3 class="ui dividing header">
+              Launcher page logo
+            </h3>
+            <p>Use the image below as logo for your Launcher page (transparent logo recommended)</p>
+
+            <div class="ui basic segment">
+              <div class="field">
+                <div id="wps-affp-logo">{{{the-logo}}}</div>
+                <input id="wps-choose-logo" type="button" value="Load Logo Image">
+                <input id="wps-logo-id" name="wps-logo-id" type="hidden" value="{{wps_logo_id}}">
+              </div>
+              {{#wps_logo_id}}
+              <p>&nbsp;</p>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" name="wpsc-remove-logo" value="true">
+                <label>Click here if you want to remove the logo</label>
+              </div>  
+              {{/wps_logo_id}}
+            </div>
+  
+            {{{tosaffp}}}
+            <p>&nbsp;</p>
+            <div class="ui toggle checkbox">
+              <input type="checkbox" id="wpsc-accept-tos">
+              <label>By ticking this box I confirm that I have read, consent and agree to the Terms of Use of WPSmartContracts Affiliate Program</label>
+            </div>  
+          </div>
+
+          
+          <div id="tosWarning" class="ui icon warning message" style="display: none;">
+            <i class="warning sign icon"></i>
+            <div class="content">
+              <div class="header">
+                Warning
+              </div>
+              <p>Acceptance of the terms is necessary to participate in the program and ensure a clear understanding of the rights and responsibilities involved. You cannot continue if you do not accept the terms. If you want to proceed with the setup wizard, you need to disable the Launcher.</p>
+            </div>
+          </div>
+
+          <input type="hidden" name="step" value="3">
+
+        </div>
+        <div class="eight wide column">
+        </div>
+        <div class="eight wide column">
+          <p class="submit">
+            <input type="submit" name="submit" id="submit" class="ui blue huge right floated button" value="Next">
+          </p>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+    </form>
+
+  </div>
+  {{/step2}}
+
+  {{#step3}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{skin}}</div>
+          <div class="description">{{skin-desc}}</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{launcher}}</div>
+          <div class="description">{{launcher-desc}}</div>
+        </div>
+      </div>
+      <div class="active step">
+        <div class="content">
+          <div class="title">{{nft}}</div>
+          <div class="description">{{nft-desc}}</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="content">
+          <div class="title">{{coin}}</div>
+          <div class="description">{{coin-desc}}</div>
+        </div>
+      </div>
+    </div>
+
+    <form method="post">
+
+      {{#full_screen}}<input type="hidden" name="fs" value="true">{{/full_screen}}
+      
+      <div class="ui stackable grid">
+        <div class="six wide column">
+          <img src="{{img}}" class="ui image">
+          {{#full_screen}}
+          <div class="ui info message">
+            <p>Thank you, I will setup this later on.</p>
+            <p><a href="{{forward-url}}">Please close the wizard</a></p>
+          </div>
+          {{/full_screen}}
+        </div>
+        <div class="ten wide column">
+
+          <h3 class="ui dividing header">
+            {{nft}}
+          </h3>
+
+          <h4 class="ui header">
+            Enable wallet user registration in the front end
+            <div class="sub header">
+              <p>Choose the role that the newly registered users will have.</p>
+              <p>By choosing one role you are enabling this option, and therefore users with this role will be able to;</p>
+              <p>&raquo; Log in using the web3 wallet</p>
+              <p>&raquo; Will have the capacity to upload files to the media library</p>
+              <p>This is particularly useful for NFT Minting in the frontend.</p>
+            </div>
+          </h4>
+
+          {{#roles}}
+          <div class="ui fitted toggle checkbox" style="display: block; margin: 10px 0; width:auto">
+            <input tabindex="0" type="radio" name="wpsc_role" id="wpsc-role-{{role}}" value="{{role}}" {{#checked}}checked="checked"{{/checked}}>
+            <label style="padding-left: 70px!important">{{{name}}}</label>
+          </div>
+          {{/roles}}
+
+          <div id="wpsc-email-registration" style="margin-top: 30px">
+
+            <h4 class="ui header">
+              Request the email to register
+              <div class="sub header">
+                Choose whether or not you want the email to be required to register the user      
+              </div>
+            </h4>
+
+            <div class="ui fitted toggle checkbox" style="display: block; margin: 10px 0; width:auto">
+              <input tabindex="0" type="checkbox" name="wpsc_email_registration" value="true" {{#wpsc_email_registration_checked}}checked="checked"{{/wpsc_email_registration_checked}}>
+              <label style="padding-left: 70px!important">Request the email to register</label>
+            </div>
+          
+            <h4 class="ui header">
+              Add media upload capabilities to the selected role
+              <div class="sub header">
+                Choose whether or not you want users in the selected role to be able to upload files to your media library
+              </div>
+            </h4>
+
+            <div class="ui fitted toggle checkbox" style="display: block; margin: 10px 0; width:auto">
+              <input tabindex="0" type="radio" name="wpsc_add_upload" id="wpsc-add-upload-" value="" {{#wpsc_add_upload__checked}}checked="checked"{{/wpsc_add_upload__checked}}>
+              <label style="padding-left: 70px!important">Leave Capabilities Unchanged</label>
+            </div>
+            <div class="ui fitted toggle checkbox" style="display: block; margin: 10px 0; width:auto">
+              <input tabindex="0" type="radio" name="wpsc_add_upload" id="wpsc-add-upload-yes" value="yes" {{#wpsc_add_upload_yes_checked}}checked="checked"{{/wpsc_add_upload_yes_checked}}>
+              <label style="padding-left: 70px!important">Add Upload Capabilities</label>
+            </div>
+            <div class="ui fitted toggle checkbox" style="display: block; margin: 10px 0; width:auto">
+              <input tabindex="0" type="radio" name="wpsc_add_upload" id="wpsc-add-upload-no" value="no" {{#wpsc_add_upload_no_checked}}checked="checked"{{/wpsc_add_upload_no_checked}}>
+              <label style="padding-left: 70px!important">Remove Upload Capabilities</label>
+            </div>
+
+            <h4 class="ui header">
+              Always redirect user to this URL after login
+              <div class="sub header">
+                Leave blank to remove custom redirection
+              </div>
+            </h4>
+            <div class="ui fluid icon input">
+              <input type="text" name="login_redirection" value="{{login_redirection}}">
+              <i class="key icon"></i>
+            </div>
+  
+          </div>
+          
+          <h4 class="ui header">
+            Do you need IPFS Storage?
+            <div class="sub header">
+              Register to get a <a href="https://nft.storage/" target="_blank">free storage for IPFS</a>
+            </div>
+          </h4>
+          <div class="ui fluid icon input">
+            <input type="text" name="nft_storage_key" value="{{nft_storage_key}}">
+            <i class="key icon"></i>
+          </div>
+
+          <div class="ui info message">
+            <div class="header">Do you need an IPFS NFT Storage API key?</div>
+            <p>An NFT Storage API key is required if you are using an NFT Smart Contract and you want to store media files in the InterPlanetary File System (IPFS).</p>
+            <p>The API key is necessary for decentralized storage of media files using IPFS. If you don't have these requirements, you can disregard this setting.</p>
+          </div>
+
+          <h4 class="ui header">
+            Do you need a Moralis Web3 API Key?
+            <div class="sub header">
+              Register to get a <a href="https://admin.moralis.io/register" target="_blank">Moralis account</a>
+            </div>
+          </h4>
+          <div class="ui fluid icon input">
+            <input type="text" name="nft_moralis_key" value="{{nft_moralis_key}}">
+            <i class="key icon"></i>
+          </div>
+
+          <div class="ui info message">
+            <div class="header">Do you need a Moralis Web3 API Key?</div>
+            <p>You only need a Moralis API key if you're using an ERC-1155 NFT Smart Contract.</p>
+            <p>The Moralis API key is specifically required for managing complex functions and multiple ownership of items in ERC-1155 Smart Contracts like Yuzu or Ikazumi. If you're using ERC-721 Smart Contracts such as Matcha, Mochi, or Suika, or if you are not using NFTs at all, then a Moralis account is not necessary.</p>
+          </div>
+
+          <div class="ui warning message">
+            <p>Select a WEB3 API key from Moralis for ERC-1155 Smart Contract interactions. The Moralis API is free up to a certain request limit, after which a paid plan is needed. Please note that WP Smart Contracts does not endorse or approve this service. Conduct your own research and use it at your own discretion and risk.</p>
+          </div>
+
+          <div class="sixteen wide column">
+            <h4 class="ui header">
+              NFT Items per page
+            </h4>
+            <div class="ui icon input">
+              <input type="text" placeholder="12" name="nft_items_per_page" value="{{nft_items_per_page}}">
+              <i class="list alternate outline icon"></i>
+            </div>
+          </div>
+  
+          <input type="hidden" name="step" value="4">
+
+        </div>
+        <div class="eight wide column">
+        </div>
+        <div class="eight wide column">
+          <p class="submit">
+            <input type="submit" name="submit" id="submit" class="ui blue huge right floated button" value="Next">
+          </p>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+    </form>
+
+  </div>
+  {{/step3}}
+
+  {{#step4}}
+    <div class="ui segment">
+
+      <div class="ui four ordered steps">
+        <div class="completed step">
+          <div class="content">
+            <div class="title">{{skin}}</div>
+            <div class="description">{{skin-desc}}</div>
+          </div>
+        </div>
+        <div class="completed step">
+          <div class="content">
+            <div class="title">{{launcher}}</div>
+            <div class="description">{{launcher-desc}}</div>
+          </div>
+        </div>
+        <div class="completed step">
+          <div class="content">
+            <div class="title">{{nft}}</div>
+            <div class="description">{{nft-desc}}</div>
+          </div>
+        </div>
+        <div class="active step">
+          <div class="content">
+            <div class="title">{{coin}}</div>
+            <div class="description">{{coin-desc}}</div>
+          </div>
+        </div>
+      </div>
+
+      <form method="post">
+
+        {{#full_screen}}<input type="hidden" name="fs" value="true">{{/full_screen}}
+        
+        <div class="ui stackable grid">
+          <div class="six wide column">
+            <img src="{{img}}" class="ui image">
+            {{#full_screen}}
+            <div class="ui info message">
+              <p>Thank you, I will setup this later on.</p>
+              <p><a href="{{forward-url}}">Please close the wizard</a></p>
+            </div>
+            {{/full_screen}}
+            </div>
+          <div class="ten wide column">
+
+            <p>This is optional and its needed only if you are planning to create and manage your own cryptocurrencies</p>
+
+            <h3 class="ui dividing header">
+              {{coin}}
+            </h3>
+
+            <div class="ui info message">
+              <div class="header">Do you need Block Explorer API keys?</div>
+              <p>Block explorer APIs are only required if you are planning to create your own cryptocurrencies and want to display them in the Block Explorer on your site. Additionally, you don't need to create API keys for all networks, only the ones you are planning to use.</p>
+              <p>If you don't have any plans to create your own tokens or cryptocurrencies, you can safely skip this part.</p>
+            </div>
+
+            <p><strong>Etherscan API</strong> Register to get a <a href="https://etherscan.io/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_etherscan" value="{{api_etherscan}}">
+              <i class="key icon"></i>
+            </div>
+    
+            <p><strong>Arbiscan API</strong> Register to get a <a href="https://arbiscan.io/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_arbiscan" value="{{api_arbiscan}}">
+              <i class="key icon"></i>
+            </div>
+    
+            <p><strong>Polygonscan API</strong> Register to get a <a href="https://polygonscan.com/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_polygonscan" value="{{api_polygonscan}}">
+              <i class="key icon"></i>
+            </div>
+    
+            <p><strong>BSCScan API</strong> Register to get a <a href="https://bscscan.com/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_bscscan" value="{{api_bscscan}}">
+              <i class="key icon"></i>
+            </div>
+    
+            <p><strong>Snowtrace (Avalanche) API</strong> Register to get a <a href="https://snowtrace.io/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_snowtrace" value="{{api_snowtrace}}">
+              <i class="key icon"></i>
+            </div>
+
+            <p><strong>FTMScan API</strong> Register to get a <a href="https://ftmscan.com/apis" target="_blank">free API key</a></p>
+            <div class="ui fluid icon input">
+              <input type="text" name="api_fantom" value="{{api_fantom}}">
+              <i class="key icon"></i>
+            </div>
+
+            <input type="hidden" name="step" value="5">
+
+          </div>
+          <div class="eight wide column">
+          </div>
+          <div class="eight wide column">
+            <p class="submit">
+              <input type="submit" name="submit" id="submit" class="ui blue huge right floated button" value="Next">
+            </p>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+      </form>
+
+    </div>
+
+  {{/step4}}
+  
+  {{#step5}}
+  <div class="ui segment">
+
+    <div class="ui four ordered steps">
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{skin}}</div>
+          <div class="description">{{skin-desc}}</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{launcher}}</div>
+          <div class="description">{{launcher-desc}}</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{nft}}</div>
+          <div class="description">{{nft-desc}}</div>
+        </div>
+      </div>
+      <div class="completed step">
+        <div class="content">
+          <div class="title">{{coin}}</div>
+          <div class="description">{{coin-desc}}</div>
+        </div>
+      </div>
+  </div>
+
+      <div class="ui stackable grid">
+        <div class="ten wide column">
+
+          <h3 class="ui dividing header">
+            Congratulations!
+          </h3>
+
+          <h2>You have finished setting up WP Smart Contracts, and you will be redirected to the dashboard in a few seconds.</h2>
+
+          <script>
+            setTimeout(() => {
+              document.location.href = "{{forward-url}}"
+            }, "2000");
+          </script>
+ 
+        </div>
+        <div class="six wide column"></div>
+      </div>
+    </form>
+
+  </div>
+  {{/step5}}
+
+  
+</div>
+
+<script>
+  jQuery('.ui.sticky')
+    .sticky({
+      context: '#wpsc-networks'
+    })
+    ;
+</script>
+
+<div id="wpsc-deploy-contract-batch" class="ui basic modal">
+
+  <span id="wpsc-deploy-contract-image"></span>
+  <h4 class="ui header">
+    <i class="tint icon"></i>
+    <div class="content">
+      {{{ethereum-deploy}}}
+      <span id="wpsc-deployer-ethereum-network" class="ui label"></span>
+    </div>
+    <span id="wpsc-nft-information" class="ui inverted header centered"></span>
+  </h4>
+
+  <div id="wpsc-deployer-warning"></div>
+
+  <div id="wpsc-nft-mint-div">
+
+    <div class="ui icon warning message">
+      <i class="warning sign icon"></i>
+      <div class="content">
+        <div class="header">
+          {{{warning-2}}}
+        </div>
+        <p>{{{warning-1}}}</p>
+      </div>
+    </div>
+
+    <h3 class="ui inverted header">{{{warning-3}}}</h3>
+    <div class="ui inverted header" id="erc-1155-supply-div"></div>
+
+  </div>
+
+  <div class="actions">
+    <div id="wpsc-deploy-cancel-button" class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>{{{no-letme-check}}}
+    </div>
+    <div id="wpsc-deploy-ok-mint-batch" class="ui green inverted button" data-type="nft-collection">
+      <i class="checkmark icon"></i>
+      {{{yes-proceed}}}
+    </div>
+  </div>
+
+</div>
+
+{{#edit_url}}
+
+<table>
+  <thead>
+    <th>Post ID</th>
+    <th>NFT Item</th>
+  </thead>
+  {{#log_content}}
+    {{#post_id}}
+      <tr>
+        <td><a href="{{edit_url}}{{post_id}}" target="_blank">{{post_id}}</a></td>
+        <td><a href="{{edit_url}}{{post_id}}" target="_blank">{{2}}</a></td>
+      </tr>
+    {{/post_id}}
+    {{^post_id}}
+      <tr>
+        <td></td>
+        <td>{{2}}: <span style="color: red">An error ocurred creating the post</td>
+      </tr>
+    {{/post_id}}
+  {{/log_content}}
+</table>
+
+<script>
+  jQuery("[id=wpadminbar]:eq(1)").hide();
+  jQuery("[id=adminmenuback]:eq(1)").hide();
+  jQuery("[id=adminmenuwrap]:eq(1)").hide();
+  jQuery("[id=footer-left]:eq(1)").hide();
+  jQuery("[id=footer-upgrade]:eq(1)").hide();
+  jQuery("[id=footer-thankyou]:eq(1)").hide();  
+</script>
+
+{{/edit_url}}
+
+{{^edit_url}}
+
+{{#log_content}}
+
+<script>
+  jQuery("[id=wpadminbar]:eq(1)").hide();
+  jQuery("[id=adminmenuback]:eq(1)").hide();
+  jQuery("[id=adminmenuwrap]:eq(1)").hide();
+  jQuery("[id=footer-left]:eq(1)").hide();
+  jQuery("[id=footer-upgrade]:eq(1)").hide();
+  jQuery("[id=footer-thankyou]:eq(1)").hide();  
+</script>
+
+<h1>Log results</h1>
+{{{log_content}}}
+
+{{/log_content}}
+
+{{/edit_url}}
+
+<script>
+  function wpsToggleTOS() {
+    jQuery("#affp").toggle();
+  }
+
+  function wpscValidateForm() {
+    if (jQuery("#wpsc-activate-launcher").is(":checked")) {
+      if (jQuery("#wpsc-accept-tos").is(":checked")) {
+        return true;
+      } else {
+        jQuery("#tosWarning").fadeIn(500);
+        return false;
+      }
+    } else {
+      return true;
+    }
+  }
+  
+
+</script>

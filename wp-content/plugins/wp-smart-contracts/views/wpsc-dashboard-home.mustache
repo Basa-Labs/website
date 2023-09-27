@@ -1,0 +1,212 @@
+<p>&nbsp;</p>
+
+<style>
+  .wpsc-wizard-card .extra.content.wpsc-small {
+    color: green;
+    font-weight: 500;
+  }
+</style>
+
+<div class="ui container">
+    <div class="ui inverted segment" style="min-height: 140px;">
+        <img src="{{logo}}" class="ui large left floated image">
+        <h1 class="ui header" style="text-align: center;">Dashboard</h1>
+    </div>
+
+    {{#welcome}}
+    <div class="ui info massive message">
+      <div class="header">
+        {{welcome}}
+      </div>
+    </div>
+    {{/welcome}}
+
+    <div class="ui teal segment">
+
+      <h1 class="ui centered header">Wizards</h1>
+
+      {{#warning-launcher}}
+      <div class="ui warning big message">
+        <div class="header">
+          The Launcher is not activated
+        </div>
+        <p>To get the most of the WP Smart Contracts 2.0 plugin please take a couple of minutes to run the setup wizard and activate the Launcher</p>
+        <a href="{{wizard03_link}}" class="ui basic black button">Run the Setup Wizard</a>
+      </div>
+      {{/warning-launcher}}
+
+      {{#warning-remove-pages}}
+      <div class="ui info big message">
+        <div class="header">
+          The Launcher has been deactivated, but the Launcher and Wizard pages may still be active.
+        </div>
+        <p>Please keep in mind that if the Launcher was previously activated, the Launcher and Wizard pages might still be available. Please go to the pages section and remove them accordingly.</p>
+      </div>  
+      {{/warning-remove-pages}}
+
+
+      <div class="ui fluid centered cards">
+        <div class="card">
+          <i class="magic blue massive icon" style="text-align: center;margin: 25px auto;"></i>
+          <div class="content">
+            <div class="header">Smart Contracts Wizard</div>
+            <div class="meta">Create your Smart Contracts in four easy steps</div>
+            <div class="description">Choose the contract that best suits your needs and deploy it in one of the multiple Blockchain networks available.</div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <a href="{{wizard01_link}}" class="ui basic blue button">Create a Smart Contract</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <i class="tint massive violet icon" style="text-align: center;margin: 25px auto;"></i>
+          <div class="content">                
+            <div class="header">Batch Mint NFT Wizard</div>
+            <div class="meta">Bulk Minting in four easy steps</div>
+            <div class="description">You can create multiple NFTs in one single and intuitive process. Available only for Yuzu and Ikasumi flavor.</div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <a href="{{wizard02_link}}" class="ui basic violet button">Bulk Mint NFT Items</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <i class="settings massive icon" style="text-align: center;margin: 25px auto;"></i>
+          <div class="content">
+            <div class="header">Setup Wizard</div>
+            <div class="meta">Set up your website, UI, and affiliate program</div>
+            <div class="description">Run the wizard again to guide you through the setup process</div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <a href="{{wizard03_link}}" class="ui basic black button">Setup Wizard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui placeholder center aligned segment">
+        <h1 class="ui header">Affiliate Program</h1>
+        <p>Partner through the WPSmartContracts Affiliate Program to generate cryptocurrency income by helping developers and entrepreneurs grow their business on Blockchain</p>
+        <img src="{{40}}" class="ui centered circular spaced image" style="width: 220px;margin-bottom: 20px;">
+
+        {{#warning-launcher}}
+        <div class="ui warning big message">
+          <div class="header">
+            The Affiliate Program is not activated
+          </div>
+          <p>If you want to have the option to generate income with the WP Smart Contracts 2.0 plugin, please take a couple of minutes to run the setup wizard and activate the Launcher/Affiliate Program.</p>
+          <a href="{{wizard03_link}}" class="ui basic black button">Run the Setup Wizard</a>
+        </div>
+        {{/warning-launcher}}
+  
+        {{#no-wallets}}
+        <div class="ui warning big message">
+          <div class="header">
+            The Affiliate Program is not properly set up
+          </div>
+          <p>You have activated the Affiliate Program, but you haven't set up any wallet. You cannot receive payments if you don't set up a wallet for all the networks. Please paste your wallet address in the wallet fields below, for all networks, and click save.</p>
+          <a href="{{wizard03_link}}" class="ui basic black button">Run the Setup Wizard</a>
+        </div>
+        {{/no-wallets}}
+  
+        <div class="ui stackable grid">
+          <div class="ten wide column">
+            <h2 class="ui header">Wallets & Payments</h2>
+            <p>Enter the wallet to receive commissions in each network. Track the total accumulated payments for each network</p>
+            <form action="admin.php?page=wpsc_dashboard" method="post">
+              <input type="hidden" name="wpsc-go-wallet" value="1">
+              <div class="description" style="margin: 20px 0">
+                <input type="hidden" id="wps-rest-url-affp" value="{{rest_url}}">
+                <table class="ui teal striped celled table">
+                  <thead>
+                    <tr><th>Network</th>
+                    <th>Wallet</th>
+                    <th>Payments</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr>
+                      <td class="wpsc-small">Ethereum</td>
+                      <td>
+                        <input class="wpsc-small" name="affp_wallet_1" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_1}}">
+                      </td>
+                      <td id="wps-payments-1" class="right aligned" class="wpsc-small">
+                    </tr>
+                    <tr>
+                      <td class="wpsc-small">Arbitrum</td>
+                      <td class="wpsc-small">
+                        <input class="wpsc-small" name="affp_wallet_42161" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_42161}}">
+                      </td>
+                      <td class="wpsc-small" id="wps-payments-42161" class="right aligned"></td>
+                    </tr>
+                    <tr>
+                      <td class="wpsc-small">Binance Smart Chain</td>
+                      <td class="wpsc-small">
+                        <input class="wpsc-small" name="affp_wallet_56" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_56}}">
+                      </td>
+                      <td class="wpsc-small" id="wps-payments-56" class="right aligned"></td>
+                    </tr>
+                    <tr>
+                      <td class="wpsc-small">Polygon (Matic)</td>
+                      <td class="wpsc-small">
+                        <input class="wpsc-small" name="affp_wallet_137" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_137}}">
+                      </td>
+                      <td class="wpsc-small" id="wps-payments-137" class="right aligned"></td>
+                    </tr>
+                    <tr>
+                      <td class="wpsc-small">Avalanche</td>
+                      <td class="wpsc-small">
+                        <input class="wpsc-small" name="affp_wallet_43114" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_43114}}">
+                      </td>
+                      <td class="wpsc-small" id="wps-payments-43114" class="right aligned"></td>
+                    </tr>
+                    <tr>
+                      <td class="wpsc-small">Fantom</td>
+                      <td class="wpsc-small">
+                        <input class="wpsc-small" name="affp_wallet_250" type="text" onfocus="this.select();" onmouseup="return false;" value="{{affp_wallet_250}}">
+                      </td>
+                      <td class="wpsc-small" id="wps-payments-250" class="right aligned"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                <input type="submit" class="ui basic green button" value="Save">
+              </p>
+            </form>
+          </div>
+          <div class="six wide column">
+            <h2 class="ui header">Promote your site</h2>
+            <p>Get a set of promotional materials to enhance your sales, including banners, tweets, and email messages.</p>
+            <p><strong>Use the link below to direct your affiliates:</strong></p>
+            <input type="text" onfocus="this.select();" onmouseup="return false;" value="{{link-launcher}}" readonly>
+
+            <h4 class="ui header" style="margin: 0">Use this banner</h4>
+            {{{html-show}}}
+            <p>HTML code:</p>
+            <textarea class="wps-textarea" rows="3" readonly onfocus="this.select();" onmouseup="return false;" style="width:100%">{{{html}}}</textarea>
+
+
+            <div class="extra content">
+              <div class="ui two buttons">
+                <a href="{{affp_link}}" class="ui basic green button">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+
+</div>
+
+<script>
+jQuery('.ui.sticky')
+  .sticky({
+    context: '#wpsc-networks'
+  })
+;
+</script>

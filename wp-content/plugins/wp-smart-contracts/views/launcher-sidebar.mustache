@@ -1,0 +1,64 @@
+<!-- WPS SIDEBAR -->
+<div class="wps-sidebar wps-sidebar-nav">
+    <div class="wps-sidebar-logo">
+        <a href="{{home_url}}">{{{customer-logo}}}</a>
+    </div>
+    <ul class="wps-main-list">
+        <li class="wps-heading-link {{#active_dashboard}}wps-active-heading{{/active_dashboard}}" style="margin-bottom: 7px!important;">
+            <a href="{{dashboard_link}}" class="wps-nav-main-link" style="padding-left: 5px;">
+                <img src="{{path-to-launcher}}img/home-logo.png">
+                {{dashboard}}
+            </a>
+        </li>
+        <li class="wps-heading-link">
+            <span class="wps-nav-main-link">
+                <img src="{{path-to-launcher}}img/nfts-logo.svg">
+                {{nft}}
+            </span>
+        </li>
+        <li class="wps-heading-link">
+            <ul class="wps-inside-list">
+                <li><a href="{{nft_link}}" class="wps-inside-link {{#active_nft}}wpsc-active{{/active_nft}}">
+                    {{create-a-collection}}
+                    &raquo;
+                </a></li>
+                <li><a href="{{nft_manage_link}}" class="wps-inside-link {{#active_nft_manage}}wpsc-active{{/active_nft_manage}}">
+                    {{manage-sc}}
+                    &raquo;
+                </a></li>
+            </ul>
+        </li>
+        <li class="wps-heading-link">
+            <span class="wps-nav-main-link">
+                <img src="{{path-to-launcher}}img/stakings-logo.svg">
+                {{staking}}
+            </span>
+            <ul class="wps-inside-list">
+                <li><a href="{{staking_link}}" class="wps-inside-link {{#active_staking}}wpsc-active{{/active_staking}}">
+                    {{create-staking}}
+                    &raquo;
+                </a></li>
+                <li><a href="{{staking_manage_link}}" class="wps-inside-link {{#active_staking_manage}}wpsc-active{{/active_staking_manage}}">
+                    {{manage-sc}}
+                    &raquo;
+                </a></li>
+            </ul>
+        </li>
+        <li class="wps-heading-link ">
+            <span class="wps-nav-main-link">
+                <img src="{{path-to-launcher}}img/tokens-logo.svg">
+                {{tokens}}
+            </span>
+            <ul class="wps-inside-list">
+                <li><a href="{{token_link}}" class="wps-inside-link {{#active_token}}wpsc-active{{/active_token}}">
+                    {{create-token}}
+                    &raquo;
+                </a></li>
+                <li><a href="{{token_manage_link}}" class="wps-inside-link {{#active_token_manage}}wpsc-active{{/active_token_manage}}">
+                    {{manage-sc}}
+                    &raquo;
+                </a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,56 @@
+<div id="launcher-crowd-see-all" class="wps-full-wrapper light-theme">
+    <!-- MAIN WRAPPER -->
+    <div class="wps-main-wrapper">
+      {{{sidebar}}}
+      <!-- WPS CONTENT -->
+      <div class="wps-content-page">
+        {{{main-nav}}}
+        <!-- GRID -->
+        <div class="wps-dashboard-grid">
+          {{{call-to-action}}}
+          <div class="wps-colums">
+            <div class="wps-dash-column" style="width: 100%;">
+              <!-- TOKENS column -->
+              <div class="wps-panel-aaa">
+                <div class="wps-panel wps-panel-content">
+                  <div class="wps-column-box wps-column-box-inner">
+                    <div class="wps-colBox-title-lg"><img src="{{path-to-launcher}}img/crowfundings-logo.svg">CROWFUNDINGS</div>
+                    <div class="" style="padding: 0 4px;">
+                      <table class="wps-smartContracts-table card wps-table no-border">
+                        <thead style="border-bottom: solid 1px #d8d8d8;text-align:left">
+                          <tr>
+                            <th>
+                              <span class="wps-paragraph no-margin">{{text-name}}</span>
+                            </th>
+                            <th>
+                              <span class="wps-paragraph no-margin">{{text-network}}</span>
+                            </th>
+                            <th>
+                              <span class="wps-paragraph no-margin">{{text-smart-contract}}</span>
+                            </th>
+                            <th>
+                              <span class="wps-paragraph no-margin">{{text-flavor}}</span>
+                            </th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody id="launcher-see-all-body">
+                          <tr><td colspan="4">
+                            <img src="{{path-to-launcher}}img/not-found.png" class="wps-center-icon">
+                            <p class="wps-small-text-center"></p>{{no-smart-contract-found}}</p>
+                          </td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="wps-colBox-cta">
+                      <a id="wps-launcher-load-more" class="wps-colBox-seeAll">{{load-more}} &raquo;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

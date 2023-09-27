@@ -1,0 +1,331 @@
+        <p></p>
+        <div class="ui container">
+        
+            <div class="ui inverted segment">
+              <div class="ui inverted segment">
+                <h1 class="ui header">
+                  <i class="settings icon"></i>
+                  {{{title}}}
+                </h1>
+                <a href="https://wpsmartcontracts.com/docs/doc-settings.php" target="_blank" class="ui grey button right floated">{{{learn-more}}}</a>
+                <p>{{{subtitle}}}</p>
+              </div>
+            </div>
+
+            <form method="post" action="options.php">
+
+            <input type='hidden' name='option_page' value='{{{option-group}}}' />
+            <input type="hidden" name="action" value="update" />
+            {{{wp-nonce-field}}}
+
+            <div class="ui secondary segment">
+              
+                <div class="ui stackable two column grid">
+                  <div class="column">
+                    <h3 class="ui dividing header">
+                      {{{clear-cache}}}
+                      <div class="sub header">
+                        {{{cache-dur-in-secs}}}
+                        <span class="ui icon" data-tooltip="{{{cache-dur-in-secs-tooltip}}}">
+                          <i class="small help icon circular"></i>
+                        </span>
+                      </div>
+                    </h3>
+                    <select id="etherscan_api_key_option_expiration_time" name="etherscan_api_key_option[expiration_time]" class="ui dropdown labeled icon">
+                      <i class="clock icon"></i>
+                      <option value="">{{{choose-expiration-time}}}</option>
+                      {{#expiration-time-list}}
+                        <option value="{{value}}" {{selected}}>{{label}}</option>
+                      {{/expiration-time-list}}
+                    </select>
+                    <p id="wpsc-clear-transient">
+                      <a href="javascript:void(0);" id="wpscFlushTransients">
+                        {{{flush-now}}}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <p class="submit">
+                  <input type="submit" name="submit" id="submit" class="button button-primary" value="{{{save}}}">
+                </p>
+
+            </div>
+
+            <div class="ui bottom attached warning message">
+              <i class="icon help"></i>
+              Need help? <a href="https://wpsmartcontracts.com/docs/doc-settings.php" target="_blank">read the documentation</a>.
+            </div>
+
+            <div class="ui secondary segment">
+              <h2 class="ui dividing header">
+                {{launcher-settings}}
+              </h2>
+              <div class="ui stackable two column grid">
+                <div class="column">
+                  <h3 class="ui dividing header">
+                    <div class="sub header">
+                      {{{authorized-user-role}}}
+                      <span class="ui icon" data-tooltip="{{{authorized-user-role-desc}}}">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h3>
+                  <select id="etherscan_api_key_option_nft_role" name="etherscan_api_key_option[nft_role]" class="ui dropdown labeled icon">
+                    <i class="clock icon"></i>
+                    {{#roles}}
+                      <option value="{{role}}" {{selected}}>{{role}}</option>
+                    {{/roles}}
+                  </select>
+                </div>
+              </div>
+              <p class="submit">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="{{{save}}}">
+              </p>
+            </div>
+
+            <div class="ui bottom attached warning message">
+              <i class="icon help"></i>
+              Need help? <a href="https://wpsmartcontracts.com/docs/doc-settings.php" target="_blank">read the documentation</a>.
+            </div>
+
+            <div class="ui secondary segment">
+              <h2 class="ui dividing header">
+                {{{coin-settings}}}
+              </h2>
+              <div class="ui stackable two column grid">
+
+                <div class="column">
+                  <h4 class="ui header">
+                    {{{api-key-token}}}
+                    <div class="sub header">
+                      {{{free-registration}}} <a href="https://etherscan.io/apis" target="_blank">{{{api-key-text}}}</a>
+                      <span class="ui icon" data-tooltip="{{{api-key-tooltip}}}">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input">
+                    <input type="text" name="etherscan_api_key_option[api_key]" value="{{api-key-value}}">
+                    <i class="key icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui info message">
+                    <div class="header">
+                      Do you need an Etherscan API key?
+                    </div>
+                    <p>You need an Etherscan API Key only if:</p>
+                    <ul class="list">
+                      <li>You are using a Coin Smart Contract on the Ethereum Network</li>
+                    </ul>
+                    <div class="ui divider"></div>
+                    <div class="header">
+                      Why do you need an Etherscan API key?
+                    </div>
+                    <p>If you are planning to use the coin block explorer for your Coin on the Ethereum network, then you need to use an Etherscan API key, otherwise, if you are not using a coin smart contract or if it is not in the Ethereum network you don't need this API key.</p>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                    BSCScan API Key Token
+                    <div class="sub header">
+                      Register for free, to get an BSCScan API Key  <a href="https://bscscan.com/apis" target="_blank">BSCScan API key</a>
+                      <span class="ui icon" data-tooltip="Optimize the Coin Block Explorer section with a free BSCScan API Key">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input">
+                    <input type="text" name="etherscan_api_key_option[bscscan_api_key]" value="{{bscscan-api-key-value}}">
+                    <i class="key icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui info message">
+                    <div class="header">
+                      Do you need a BSCScan API key?
+                    </div>
+                    <p>You need an BSCScan API Key only if:</p>
+                    <ul class="list">
+                      <li>You are using a Coin Smart Contract on the Binance Smart Chain Network</li>
+                    </ul>
+                    <div class="ui divider"></div>
+                    <div class="header">
+                      Why do you need a BSCScan API key?
+                    </div>
+                    <p>If you are planning to use the coin block explorer for your Coin on the Binance Smart Chain network, then you need to use a BSCScan API key, otherwise, if you are not using a coin smart contract or if it is not in the Binance Smart Chain network you don't need this API key.</p>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                    Polygonscan API Key Token
+                    <div class="sub header">
+                      Register for free, to get an Polygonscan API Key  <a href="https://polygonscan.com/apis" target="_blank">Polygonscan API key</a>
+                      <span class="ui icon" data-tooltip="Optimize the Coin Block Explorer section with a free Polygon API Key">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input">
+                    <input type="text" name="etherscan_api_key_option[polygonscan_api_key]" value="{{polygonscan-api-key-value}}">
+                    <i class="key icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui info message">
+                    <div class="header">
+                      Do you need a Polygonscan API key?
+                    </div>
+                    <p>You need an Polygonscan API Key only if:</p>
+                    <ul class="list">
+                      <li>You are using a Coin Smart Contract on the Polygon (Matic) Network</li>
+                    </ul>
+                    <div class="ui divider"></div>
+                    <div class="header">
+                      Why do you need a Polygonscan API key?
+                    </div>
+                    <p>If you are planning to use the coin block explorer for your Coin on the Polygon (Matic) network, then you need to use a Polygonscan API key, otherwise, if you are not using a coin smart contract or if it is not in the Polygon network you don't need this API key.</p>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                    Snowtrace API Key Token
+                    <div class="sub header">
+                      Register for free, to get an Snowtrace API Key  <a href="https://snowtrace.io/apis" target="_blank">Snowtrace API key</a>
+                      <span class="ui icon" data-tooltip="Optimize the Coin Block Explorer section with a free Snowtrace API Key">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input">
+                    <input type="text" name="etherscan_api_key_option[avax_api_key]" value="{{avax-api-key-value}}">
+                    <i class="key icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui info message">
+                    <div class="header">
+                      Do you need a Snowtrace API key?
+                    </div>
+                    <p>You need an Snowtrace API Key only if:</p>
+                    <ul class="list">
+                      <li>You are using a Coin Smart Contract on the Avalanche Network</li>
+                    </ul>
+                    <div class="ui divider"></div>
+                    <div class="header">
+                      Why do you need a Snowtrace API key?
+                    </div>
+                    <p>If you are planning to use the coin block explorer for your Coin on the Avalanche network, then you need to use a Snowtrace API key, otherwise, if you are not using a coin smart contract or if it is not in the Avalanche network you don't need this API key.</p>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                    FTMScan API Key Token
+                    <div class="sub header">
+                      Register for free, to get an FTMScan API Key  <a href="https://ftmscan.com/apis" target="_blank">FTMScan API key</a>
+                      <span class="ui icon" data-tooltip="Optimize the Coin Block Explorer section with a free FTMScan API Key">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui fluid icon input">
+                    <input type="text" name="etherscan_api_key_option[fantom_api_key]" value="{{fantom-api-key-value}}">
+                    <i class="key icon"></i>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="ui info message">
+                    <div class="header">
+                      Do you need a FTMScan API key?
+                    </div>
+                    <p>You need an FTMScan API Key only if:</p>
+                    <ul class="list">
+                      <li>You are using a Coin Smart Contract on the Fantom Network</li>
+                    </ul>
+                    <div class="ui divider"></div>
+                    <div class="header">
+                      Why do you need a FTMScan API key?
+                    </div>
+                    <p>If you are planning to use the coin block explorer for your Coin on the Fantom network, then you need to use a Fantom API key, otherwise, if you are not using a coin smart contract or if it is not in the Fantom network you don't need this API key.</p>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <h4 class="ui header">
+                    {{{separator-format}}}
+                    <div class="sub header">
+                      {{{thousands-decimals-separator}}}
+                      <span class="ui icon" data-tooltip="{{{thousands-decimals-separator-tooltip}}}">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                    <select name="etherscan_api_key_option[number_separators]" class="ui dropdown labeled">
+                      <option value="">{{{choose-separators}}}</option>
+                      {{#number-separators}}
+                        <option value="{{value}}" {{selected}}>{{label}}</option>
+                      {{/number-separators}}
+                    </select>
+                </div>
+               <div class="sixteen wide column">
+                  <h4 class="ui header">
+                    {{{decimals-to-show-text}}}
+                    <div class="sub header">
+                      {{{decimals-to-show-sub}}}
+                      <span class="ui icon" data-tooltip="{{{decimals-to-show-tooltip}}}">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui icon input">
+                    <input type="text" placeholder="4" name="etherscan_api_key_option[decimals_to_show]" value="{{decimals-to-show}}" >
+                    <i class="calendar outline icon"></i>
+                  </div>
+                </div>
+               <div class="sixteen wide column">
+                  <h4 class="ui header">
+                    {{{date-format-in}}} <a href="http://php.net/manual/en/function.date.php" target="_blank">{{{php-style}}}</a>
+                    <div class="sub header">
+                      {{{date-format-in-sub}}}
+                      <span class="ui icon" data-tooltip="{{{date-format-in-sub-tooltip}}}">
+                        <i class="small help icon circular"></i>
+                      </span>
+                    </div>
+                  </h4>
+                  <div class="ui icon input" id="wpsc-coin-decimals">
+                    <input type="text" placeholder="Y-m-d" name="etherscan_api_key_option[date_format]" value="{{date-format-value}}" >
+                    <i class="calendar outline icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <p class="submit">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="{{{save}}}">
+              </p>
+
+            </div>
+
+            <div class="ui bottom attached warning message">
+              <i class="icon help"></i>
+              Need help? <a href="https://wpsmartcontracts.com/docs/doc-settings.php" target="_blank">read the documentation</a>.
+            </div>
+
+            </form>
+
+        </div>
+
+<script>
+jQuery( ".wpsc-radio-ico" ).click(function() {
+  jQuery("#wpsc_skin_hidden").val(jQuery("input[name='wpsc_skin_radio']:checked").val());
+});
+</script>

@@ -1,0 +1,905 @@
+{
+    "dup_type": "lite",
+    "created": "2023-09-27 14:20:02",
+    "version_dup": "1.5.6",
+    "version_wp": "6.3.1",
+    "version_db": "10.6.12",
+    "version_php": "8.0.29",
+    "version_os": "Linux",
+    "blogname": "Basa Labs",
+    "exportOnlyDB": 0,
+    "secure_on": 0,
+    "secure_pass": "$2a$08$\/f0mdWhYkg.VcbJZewQ7YudrmPlI1f72BpDrfypq0ZuYDmqgL8AjC",
+    "dbhost": null,
+    "dbname": null,
+    "dbuser": null,
+    "cpnl_host": null,
+    "cpnl_user": null,
+    "cpnl_pass": null,
+    "cpnl_enable": null,
+    "wp_tableprefix": "wp_",
+    "mu_mode": 0,
+    "mu_generation": 0,
+    "mu_siteadmins": [
+        "admin"
+    ],
+    "subsites": [
+        {
+            "id": 1,
+            "domain": "basalabs.com",
+            "path": "\/",
+            "blogname": "Basa Labs",
+            "blog_prefix": "wp_",
+            "filteredTables": [],
+            "adminUsers": [
+                {
+                    "ID": "1",
+                    "user_login": "admin",
+                    "id": "1"
+                },
+                {
+                    "ID": "2",
+                    "user_login": "Dipesh",
+                    "id": "2"
+                }
+            ],
+            "fullHomeUrl": "https:\/\/basalabs.com",
+            "fullSiteUrl": "https:\/\/basalabs.com",
+            "uploadPath": "wp-content\/uploads",
+            "fullUploadPath": "\/home\/basalabs.com\/public_html\/wp-content\/uploads",
+            "fullUploadSafePath": "\/home\/basalabs.com\/public_html\/wp-content\/uploads",
+            "fullUploadUrl": "https:\/\/basalabs.com\/wp-content\/uploads",
+            "filteredPaths": []
+        }
+    ],
+    "main_site_id": 1,
+    "mu_is_filtered": false,
+    "license_limit": 0,
+    "license_type": 0,
+    "dbInfo": {
+        "buildMode": "MYSQLDUMP",
+        "charSetList": [
+            "utf8mb4",
+            "utf8mb3"
+        ],
+        "collationList": [
+            "utf8mb3_general_ci",
+            "utf8mb4_unicode_520_ci",
+            "utf8mb4_unicode_ci"
+        ],
+        "engineList": [
+            "InnoDB"
+        ],
+        "isTablesUpperCase": 0,
+        "isNameUpperCase": 1,
+        "name": "Xqnirs77oLxuyu",
+        "tablesBaseCount": 40,
+        "tablesFinalCount": 40,
+        "muFilteredTableCount": 0,
+        "tablesRowCount": 4852,
+        "tablesSizeOnDisk": 51380224,
+        "tablesList": {
+            "wp_burst_goals": {
+                "inaccurateRows": 0,
+                "insertedRows": 1,
+                "size": 16384
+            },
+            "wp_burst_goal_statistics": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_burst_sessions": {
+                "inaccurateRows": 79,
+                "insertedRows": 79,
+                "size": 16384
+            },
+            "wp_burst_statistics": {
+                "inaccurateRows": 65,
+                "insertedRows": 65,
+                "size": 81920
+            },
+            "wp_cmplz_cookiebanners": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_cmplz_cookies": {
+                "inaccurateRows": 18,
+                "insertedRows": 18,
+                "size": 16384
+            },
+            "wp_cmplz_services": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_commentmeta": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 49152
+            },
+            "wp_comments": {
+                "inaccurateRows": 1,
+                "insertedRows": 1,
+                "size": 98304
+            },
+            "wp_duplicator_packages": {
+                "inaccurateRows": 1,
+                "insertedRows": 1,
+                "size": 32768
+            },
+            "wp_e_events": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_e_submissions": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 294912
+            },
+            "wp_e_submissions_actions_log": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 131072
+            },
+            "wp_e_submissions_values": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 49152
+            },
+            "wp_links": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_litespeed_url": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 49152
+            },
+            "wp_litespeed_url_file": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 98304
+            },
+            "wp_options": {
+                "inaccurateRows": 674,
+                "insertedRows": 683,
+                "size": 4390912
+            },
+            "wp_postmeta": {
+                "inaccurateRows": 3281,
+                "insertedRows": 3743,
+                "size": 30015488
+            },
+            "wp_posts": {
+                "inaccurateRows": 510,
+                "insertedRows": 501,
+                "size": 15106048
+            },
+            "wp_revslider_css": {
+                "inaccurateRows": 109,
+                "insertedRows": 109,
+                "size": 147456
+            },
+            "wp_revslider_css_bkp": {
+                "inaccurateRows": 47,
+                "insertedRows": 47,
+                "size": 32768
+            },
+            "wp_revslider_layer_animations": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_revslider_layer_animations_bkp": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_revslider_navigations": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_revslider_navigations_bkp": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 16384
+            },
+            "wp_revslider_sliders": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_revslider_sliders_bkp": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_revslider_slides": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_revslider_slides_bkp": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_revslider_static_slides": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_revslider_static_slides_bkp": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_termmeta": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 49152
+            },
+            "wp_terms": {
+                "inaccurateRows": 4,
+                "insertedRows": 4,
+                "size": 49152
+            },
+            "wp_term_relationships": {
+                "inaccurateRows": 18,
+                "insertedRows": 18,
+                "size": 32768
+            },
+            "wp_term_taxonomy": {
+                "inaccurateRows": 4,
+                "insertedRows": 4,
+                "size": 49152
+            },
+            "wp_tm_taskmeta": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 49152
+            },
+            "wp_tm_tasks": {
+                "inaccurateRows": 0,
+                "insertedRows": 0,
+                "size": 32768
+            },
+            "wp_usermeta": {
+                "inaccurateRows": 39,
+                "insertedRows": 39,
+                "size": 49152
+            },
+            "wp_users": {
+                "inaccurateRows": 2,
+                "insertedRows": 2,
+                "size": 65536
+            }
+        },
+        "lowerCaseTableNames": 0,
+        "dbEngine": "MariaDB",
+        "version": "10.6.12",
+        "versionComment": "Ubuntu 22.04",
+        "viewCount": 0,
+        "procCount": 0,
+        "funcCount": 0,
+        "triggerList": []
+    },
+    "packInfo": {
+        "packageId": 1,
+        "packageName": "20230927_basalabs",
+        "packageHash": "b8c806a-27142002",
+        "secondaryHash": "e88b68e-27142002"
+    },
+    "fileInfo": {
+        "dirCount": 2906,
+        "fileCount": 18663,
+        "size": 378454543
+    },
+    "wpInfo": {
+        "version": "6.3.1",
+        "is_multisite": false,
+        "network_id": 1,
+        "targetRoot": "\/home\/basalabs.com\/public_html",
+        "targetPaths": [
+            "\/home\/basalabs.com\/public_html"
+        ],
+        "adminUsers": [
+            {
+                "ID": "1",
+                "user_login": "admin",
+                "id": "1"
+            },
+            {
+                "ID": "2",
+                "user_login": "Dipesh",
+                "id": "2"
+            }
+        ],
+        "configs": {
+            "defines": {
+                "ABSPATH": {
+                    "value": "\/home\/basalabs.com\/public_html\/",
+                    "inWpConfig": true
+                },
+                "DB_CHARSET": {
+                    "value": "utf8",
+                    "inWpConfig": true
+                },
+                "DB_COLLATE": {
+                    "value": "",
+                    "inWpConfig": true
+                },
+                "AUTH_KEY": {
+                    "value": "CsOJj_j [dMS^)w:O+1rX$F; eRQ&{B5VNn3%QZ~L}K(X$kL[4~4s(8ZzA1T+F! ",
+                    "inWpConfig": true
+                },
+                "SECURE_AUTH_KEY": {
+                    "value": "j\/ne0cz&l\/iw4~Jl\/9+Do)@DA?9-9IK7]lcD|w^~p5i]RQxA3C2Z.9.Xa^@l xtT",
+                    "inWpConfig": true
+                },
+                "LOGGED_IN_KEY": {
+                    "value": "M~2tc-8rhM@A>%UB^pj>NNo#MZAHB?5hx>P~crV$z|tL_:Tl#JdE6,3d3.vvb_Xx",
+                    "inWpConfig": true
+                },
+                "NONCE_KEY": {
+                    "value": "o[{NvLr?{qQ{8YdZY~-~3;KHl~e$v, )oe2\/9@)N-,Fi4jsKlzd_I=Lmkj>8qPq`",
+                    "inWpConfig": true
+                },
+                "AUTH_SALT": {
+                    "value": ")d*lRl\/Pcl64Kn.,;f5 c\/{DChE)t!BB6H~,?TJKpyA]{TIE2A)M~v8]n(,r,M1Q",
+                    "inWpConfig": true
+                },
+                "SECURE_AUTH_SALT": {
+                    "value": "\/DH4)K.b:+:5+j BTt^:ANu(M6Z:yM;bjk=*iLXP6O~(IjxDPOzex}zRKMf^DQzu",
+                    "inWpConfig": true
+                },
+                "LOGGED_IN_SALT": {
+                    "value": "nPtTU1V%S6OCeB#PT8LzFVkHh_o<Nd9W`=8`cgLn~v3 +Jy6Ue G5|ci<8Ik\/JxF",
+                    "inWpConfig": true
+                },
+                "NONCE_SALT": {
+                    "value": "6Boy,;q9<O,zW6k6!yfWkhjy Kry>F^ <3xM&52{(n%EH\/kz$nRWrqN6L1cB-&Y^",
+                    "inWpConfig": true
+                },
+                "WP_CONTENT_DIR": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content",
+                    "inWpConfig": false
+                },
+                "WP_CONTENT_URL": {
+                    "value": "https:\/\/basalabs.com\/wp-content",
+                    "inWpConfig": false
+                },
+                "WP_PLUGIN_DIR": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content\/plugins",
+                    "inWpConfig": false
+                },
+                "WP_PLUGIN_URL": {
+                    "value": "https:\/\/basalabs.com\/wp-content\/plugins",
+                    "inWpConfig": false
+                },
+                "PLUGINDIR": {
+                    "value": "wp-content\/plugins",
+                    "inWpConfig": false
+                },
+                "AUTOSAVE_INTERVAL": {
+                    "value": 60,
+                    "inWpConfig": false
+                },
+                "WP_POST_REVISIONS": {
+                    "value": true,
+                    "inWpConfig": false
+                },
+                "COOKIE_DOMAIN": {
+                    "value": false,
+                    "inWpConfig": false
+                },
+                "MULTISITE": {
+                    "value": false,
+                    "inWpConfig": false
+                },
+                "WP_DEBUG": {
+                    "value": false,
+                    "inWpConfig": true
+                },
+                "SCRIPT_DEBUG": {
+                    "value": false,
+                    "inWpConfig": false
+                },
+                "WP_DEBUG_LOG": {
+                    "value": false,
+                    "inWpConfig": false
+                },
+                "WP_DEBUG_DISPLAY": {
+                    "value": true,
+                    "inWpConfig": false
+                },
+                "WP_MEMORY_LIMIT": {
+                    "value": "40M",
+                    "inWpConfig": false
+                },
+                "WP_MAX_MEMORY_LIMIT": {
+                    "value": "512M",
+                    "inWpConfig": false
+                },
+                "WP_CACHE": {
+                    "value": false,
+                    "inWpConfig": false
+                },
+                "WP_LANG_DIR": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content\/languages",
+                    "inWpConfig": false
+                },
+                "FS_CHMOD_DIR": {
+                    "value": 493,
+                    "inWpConfig": false
+                },
+                "FS_CHMOD_FILE": {
+                    "value": 420,
+                    "inWpConfig": false
+                },
+                "FS_METHOD": {
+                    "value": "direct",
+                    "inWpConfig": false
+                },
+                "WP_CRON_LOCK_TIMEOUT": {
+                    "value": 60,
+                    "inWpConfig": false
+                },
+                "COOKIEPATH": {
+                    "value": "\/",
+                    "inWpConfig": false
+                },
+                "SITECOOKIEPATH": {
+                    "value": "\/",
+                    "inWpConfig": false
+                },
+                "ADMIN_COOKIE_PATH": {
+                    "value": "\/wp-admin",
+                    "inWpConfig": false
+                },
+                "PLUGINS_COOKIE_PATH": {
+                    "value": "\/wp-content\/plugins",
+                    "inWpConfig": false
+                },
+                "TEMPLATEPATH": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content\/themes\/hub",
+                    "inWpConfig": false
+                },
+                "STYLESHEETPATH": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content\/themes\/hub",
+                    "inWpConfig": false
+                },
+                "EMPTY_TRASH_DAYS": {
+                    "value": 30,
+                    "inWpConfig": false
+                },
+                "DISALLOW_FILE_EDIT": {
+                    "value": true,
+                    "inWpConfig": false
+                },
+                "FORCE_SSL_ADMIN": {
+                    "value": true,
+                    "inWpConfig": false
+                },
+                "WPMU_PLUGIN_DIR": {
+                    "value": "\/home\/basalabs.com\/public_html\/wp-content\/mu-plugins",
+                    "inWpConfig": false
+                },
+                "WPMU_PLUGIN_URL": {
+                    "value": "https:\/\/basalabs.com\/wp-content\/mu-plugins",
+                    "inWpConfig": false
+                },
+                "MUPLUGINDIR": {
+                    "value": "wp-content\/mu-plugins",
+                    "inWpConfig": false
+                }
+            },
+            "realValues": {
+                "siteUrl": "https:\/\/basalabs.com",
+                "homeUrl": "https:\/\/basalabs.com",
+                "loginUrl": "https:\/\/basalabs.com\/wp-login.php",
+                "contentUrl": "https:\/\/basalabs.com\/wp-content",
+                "uploadBaseUrl": "https:\/\/basalabs.com\/wp-content\/uploads",
+                "pluginsUrl": "https:\/\/basalabs.com\/wp-content\/plugins",
+                "mupluginsUrl": "https:\/\/basalabs.com\/wp-content\/mu-plugins",
+                "themesUrl": "https:\/\/basalabs.com\/wp-content\/themes",
+                "originalPaths": {
+                    "home": "\/home\/basalabs.com\/public_html",
+                    "abs": "\/home\/basalabs.com\/public_html",
+                    "wpconfig": "\/home\/basalabs.com\/public_html",
+                    "wpcontent": "\/home\/basalabs.com\/public_html\/wp-content",
+                    "uploads": "\/home\/basalabs.com\/public_html\/wp-content\/uploads",
+                    "plugins": "\/home\/basalabs.com\/public_html\/wp-content\/plugins",
+                    "muplugins": "\/home\/basalabs.com\/public_html\/wp-content\/mu-plugins",
+                    "themes": "\/home\/basalabs.com\/public_html\/wp-content\/themes"
+                },
+                "archivePaths": {
+                    "home": "\/home\/basalabs.com\/public_html",
+                    "abs": "\/home\/basalabs.com\/public_html",
+                    "wpconfig": "\/home\/basalabs.com\/public_html",
+                    "wpcontent": "\/home\/basalabs.com\/public_html\/wp-content",
+                    "uploads": "\/home\/basalabs.com\/public_html\/wp-content\/uploads",
+                    "plugins": "\/home\/basalabs.com\/public_html\/wp-content\/plugins",
+                    "muplugins": "\/home\/basalabs.com\/public_html\/wp-content\/mu-plugins",
+                    "themes": "\/home\/basalabs.com\/public_html\/wp-content\/themes"
+                }
+            }
+        },
+        "plugins": {
+            "airdrop\/airdrop.php": {
+                "slug": "airdrop\/airdrop.php",
+                "name": "Airdrop",
+                "version": "1.0.5",
+                "pluginURI": "https:\/\/kadesthemes.com\/wordpress-plugins\/airdrop\/",
+                "author": "Kades Themes",
+                "authorURI": "https:\/\/kadesthemes.com\/",
+                "description": "WP Airdrop Manager is a plugin allows you add and manager Airdrop, Bounty Hunt and ICO projects. Best fit for Cryptocurrency Affiliate site or Magazine or blog about Crypto.",
+                "title": "Airdrop",
+                "networkActive": false,
+                "active": false,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "burst-statistics\/burst.php": {
+                "slug": "burst-statistics\/burst.php",
+                "name": "Burst Statistics - Privacy-Friendly Analytics for WordPress",
+                "version": "1.4.6.1",
+                "pluginURI": "https:\/\/www.wordpress.org\/plugins\/burst-statistics",
+                "author": "Really Simple Plugins",
+                "authorURI": "https:\/\/burst-statistics.com",
+                "description": "Get detailed insights into visitors\u2019 behavior with Burst Statistics, the privacy-friendly analytics dashboard from Really Simple Plugins.",
+                "title": "Burst Statistics - Privacy-Friendly Analytics for WordPress",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "complianz-gdpr\/complianz-gpdr.php": {
+                "slug": "complianz-gdpr\/complianz-gpdr.php",
+                "name": "Complianz | GDPR\/CCPA Cookie Consent",
+                "version": "6.5.4",
+                "pluginURI": "https:\/\/www.wordpress.org\/plugins\/complianz-gdpr",
+                "author": "Really Simple Plugins",
+                "authorURI": "https:\/\/www.complianz.io",
+                "description": "Complianz Privacy Suite for GDPR, CaCPA, DSVGO, AVG with a conditional cookie warning and customized cookie policy",
+                "title": "Complianz | GDPR\/CCPA Cookie Consent",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "contact-form-7\/wp-contact-form-7.php": {
+                "slug": "contact-form-7\/wp-contact-form-7.php",
+                "name": "Contact Form 7",
+                "version": "5.8",
+                "pluginURI": "https:\/\/contactform7.com\/",
+                "author": "Takayuki Miyoshi",
+                "authorURI": "https:\/\/ideasilo.wordpress.com\/",
+                "description": "Just another contact form plugin. Simple but flexible.",
+                "title": "Contact Form 7",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "duplicate-page\/duplicatepage.php": {
+                "slug": "duplicate-page\/duplicatepage.php",
+                "name": "Duplicate Page",
+                "version": "4.5.3",
+                "pluginURI": "https:\/\/wordpress.org\/plugins\/duplicate-page\/",
+                "author": "mndpsingh287",
+                "authorURI": "https:\/\/profiles.wordpress.org\/mndpsingh287\/",
+                "description": "Duplicate Posts, Pages and Custom Posts using single click.",
+                "title": "Duplicate Page",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "duplicator\/duplicator.php": {
+                "slug": "duplicator\/duplicator.php",
+                "name": "Duplicator",
+                "version": "1.5.6",
+                "pluginURI": "https:\/\/duplicator.com\/",
+                "author": "Duplicator",
+                "authorURI": "https:\/\/duplicator.com\/",
+                "description": "Migrate and backup a copy of your WordPress files and database. Duplicate and move a site from one location to another quickly.",
+                "title": "Duplicator",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "elementor\/elementor.php": {
+                "slug": "elementor\/elementor.php",
+                "name": "Elementor",
+                "version": "3.16.4",
+                "pluginURI": "https:\/\/elementor.com\/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash",
+                "author": "Elementor.com",
+                "authorURI": "https:\/\/elementor.com\/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash",
+                "description": "The Elementor Website Builder has it all: drag and drop page builder, pixel perfect design, mobile responsive editing, and more. Get started now!",
+                "title": "Elementor",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "elementor-pro\/elementor-pro.php": {
+                "slug": "elementor-pro\/elementor-pro.php",
+                "name": "Elementor Pro",
+                "version": "3.16.2",
+                "pluginURI": "https:\/\/go.elementor.com\/wp-dash-wp-plugins-author-uri\/",
+                "author": "Elementor.com",
+                "authorURI": "https:\/\/go.elementor.com\/wp-dash-wp-plugins-author-uri\/",
+                "description": "Elevate your designs and unlock the full power of Elementor. Gain access to dozens of Pro widgets and kits, Theme Builder, Pop Ups, Forms and WooCommerce building capabilities.",
+                "title": "Elementor Pro",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "file-manager-advanced\/file_manager_advanced.php": {
+                "slug": "file-manager-advanced\/file_manager_advanced.php",
+                "name": "File Manager Advanced",
+                "version": "5.1.2",
+                "pluginURI": "https:\/\/wordpress.org\/plugins\/file-manager-advanced",
+                "author": "modalweb",
+                "authorURI": "https:\/\/advancedfilemanager.com",
+                "description": "Cpanel for files management in wordpress",
+                "title": "File Manager Advanced",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "hub-core\/landing-hub-core.php": {
+                "slug": "hub-core\/landing-hub-core.php",
+                "name": "Hub Core",
+                "version": "4.2",
+                "pluginURI": "https:\/\/hub.liquid-themes.com\/",
+                "author": "Liquid Themes",
+                "authorURI": "https:\/\/themeforest.net\/user\/liquidthemes",
+                "description": "Intelligent and Powerful Elements Plugin, exclusively for Hub WordPress Theme.",
+                "title": "Hub Core",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "hub-elementor-addons\/hub-elementor-addons.php": {
+                "slug": "hub-elementor-addons\/hub-elementor-addons.php",
+                "name": "Hub Elementor Addons",
+                "version": "4.2",
+                "pluginURI": "http:\/\/landing-hub.liquid-themes.com\/",
+                "author": "Liquid Themes",
+                "authorURI": "http:\/\/landing-hub.liquid-themes.com\/",
+                "description": "Hub Theme exclusively Elementor addons.",
+                "title": "Hub Elementor Addons",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "hub-portfolio\/hub-portfolio.php": {
+                "slug": "hub-portfolio\/hub-portfolio.php",
+                "name": "Hub Portfolio",
+                "version": "1.0.2",
+                "pluginURI": "http:\/\/landingjhub.liquid-themes.com\/",
+                "author": "Liquid Themes",
+                "authorURI": "https:\/\/themeforest.net\/user\/liquidthemes",
+                "description": "Modern and Diversified Portfolio Plugin, exclusively Hub WordPress Theme.",
+                "title": "Hub Portfolio",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "liquid-gdpr\/liquid-gdpr.php": {
+                "slug": "liquid-gdpr\/liquid-gdpr.php",
+                "name": "Liquid GDPR Box",
+                "version": "1.0.2",
+                "pluginURI": "http:\/\/ave.liquid-themes.com\/",
+                "author": "LiquidThemes",
+                "authorURI": "https:\/\/themeforest.net\/user\/liquidthemes",
+                "description": "Liquid GDPR box",
+                "title": "Liquid GDPR Box",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "litespeed-cache\/litespeed-cache.php": {
+                "slug": "litespeed-cache\/litespeed-cache.php",
+                "name": "LiteSpeed Cache",
+                "version": "5.6",
+                "pluginURI": "https:\/\/www.litespeedtech.com\/products\/cache-plugins\/wordpress-acceleration",
+                "author": "LiteSpeed Technologies",
+                "authorURI": "https:\/\/www.litespeedtech.com",
+                "description": "High-performance page caching and site optimization from LiteSpeed",
+                "title": "LiteSpeed Cache",
+                "networkActive": false,
+                "active": false,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "really-simple-ssl\/rlrsssl-really-simple-ssl.php": {
+                "slug": "really-simple-ssl\/rlrsssl-really-simple-ssl.php",
+                "name": "Really Simple SSL",
+                "version": "7.0.9",
+                "pluginURI": "https:\/\/really-simple-ssl.com",
+                "author": "Really Simple Plugins",
+                "authorURI": "https:\/\/really-simple-plugins.com",
+                "description": "Lightweight SSL & Hardening Plugin",
+                "title": "Really Simple SSL",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "revslider\/revslider.php": {
+                "slug": "revslider\/revslider.php",
+                "name": "Slider Revolution",
+                "version": "6.6.16",
+                "pluginURI": "https:\/\/www.sliderrevolution.com\/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info",
+                "author": "ThemePunch",
+                "authorURI": "https:\/\/themepunch.com\/?utm_source=admin&utm_medium=button&utm_campaign=srusers&utm_content=info",
+                "description": "Slider Revolution - More than just a WordPress Slider",
+                "title": "Slider Revolution",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "svg-support\/svg-support.php": {
+                "slug": "svg-support\/svg-support.php",
+                "name": "SVG Support",
+                "version": "2.5.5",
+                "pluginURI": "http:\/\/wordpress.org\/plugins\/svg-support\/",
+                "author": "Benbodhi",
+                "authorURI": "https:\/\/benbodhi.com",
+                "description": "Upload SVG files to the Media Library and render SVG files inline for direct styling\/animation of an SVG's internal elements using CSS\/JS.",
+                "title": "SVG Support",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "wp-optimize-premium\/wp-optimize.php": {
+                "slug": "wp-optimize-premium\/wp-optimize.php",
+                "name": "WP-Optimize Premium - Clean, Compress, Cache",
+                "version": "3.2.18",
+                "pluginURI": "https:\/\/getwpo.com",
+                "author": "David Anderson, Ruhani Rabin, Team Updraft",
+                "authorURI": "https:\/\/updraftplus.com",
+                "description": "WP-Optimize makes your site fast and efficient. It cleans the database, compresses images and caches pages. Fast sites attract moretraffic and users.",
+                "title": "WP-Optimize Premium - Clean, Compress, Cache",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "wp-bottom-menu\/wp-bottom-menu.php": {
+                "slug": "wp-bottom-menu\/wp-bottom-menu.php",
+                "name": "WP Bottom Menu",
+                "version": "2.2.1",
+                "pluginURI": "",
+                "author": "J4 & LiquidThemes",
+                "authorURI": "https:\/\/hub.liquid-themes.com\/",
+                "description": "WP Bottom Menu allows you to add a woocommerce supported bottom menu to your site.",
+                "title": "WP Bottom Menu",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            },
+            "wp-smart-contracts\/wp-smart-contracts.php": {
+                "slug": "wp-smart-contracts\/wp-smart-contracts.php",
+                "name": "WP Smart Contracts",
+                "version": "2.0.7",
+                "pluginURI": "https:\/\/www.wpsmartcontracts.com\/",
+                "author": "WPSmartContracts.com",
+                "authorURI": "",
+                "description": "Easily create powerful Smart Contracts in multiple blockchain networks",
+                "title": "WP Smart Contracts",
+                "networkActive": false,
+                "active": true,
+                "mustUse": false,
+                "dropIns": false
+            }
+        },
+        "themes": {
+            "hub": {
+                "slug": "hub",
+                "themeName": "Hub",
+                "version": "4.2",
+                "themeURI": "https:\/\/hub.liquid-themes.com\/",
+                "parentTheme": false,
+                "template": "hub",
+                "stylesheet": "hub",
+                "description": "Smart, Powerful and Unlimited Customizable WordPress Theme.",
+                "author": "Liquid Themes",
+                "authorURI": "https:\/\/themeforest.net\/user\/liquidthemes",
+                "tags": [
+                    "responsive",
+                    "retina",
+                    "rtl-language-support",
+                    "blog",
+                    "portfolio",
+                    "custom-colors",
+                    "live-editor"
+                ],
+                "isAllowed": true,
+                "isActive": true,
+                "defaultTheme": false
+            },
+            "twentytwentythree": {
+                "slug": "twentytwentythree",
+                "themeName": "Twenty Twenty-Three",
+                "version": "1.2",
+                "themeURI": "https:\/\/wordpress.org\/themes\/twentytwentythree",
+                "parentTheme": false,
+                "template": "twentytwentythree",
+                "stylesheet": "twentytwentythree",
+                "description": "Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community. Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.",
+                "author": "the WordPress team",
+                "authorURI": "https:\/\/wordpress.org",
+                "tags": [
+                    "one-column",
+                    "custom-colors",
+                    "custom-menu",
+                    "custom-logo",
+                    "editor-style",
+                    "featured-images",
+                    "full-site-editing",
+                    "block-patterns",
+                    "rtl-language-support",
+                    "sticky-post",
+                    "threaded-comments",
+                    "translation-ready",
+                    "wide-blocks",
+                    "block-styles",
+                    "style-variations",
+                    "accessibility-ready",
+                    "blog",
+                    "portfolio",
+                    "news"
+                ],
+                "isAllowed": true,
+                "isActive": false,
+                "defaultTheme": true
+            }
+        }
+    },
+    "defaultStorageId": -1,
+    "components": [
+        "package_component_db",
+        "package_component_core",
+        "package_component_plugins",
+        "package_component_themes",
+        "package_component_uploads",
+        "package_component_other"
+    ],
+    "opts_delete": "[\"duplicator_ui_view_state\",\"duplicator_package_active\",\"duplicator_settings\",\"duplicator_is_pro_enable_notice_dismissed\"]",
+    "brand": {
+        "name": "Duplicator",
+        "isDefault": true,
+        "logo": "<i class=\"fa fa-bolt fa-sm\"><\/i> Duplicator",
+        "enabled": false,
+        "style": []
+    },
+    "overwriteInstallerParams": {
+        "blogname": {
+            "value": "Basa Labs"
+        }
+    },
+    "installer_base_name": "installer.php.bak",
+    "installer_backup_name": "20230927_basalabs_b8c806a83ac1e99a9856_20230927142002_installer-backup.php",
+    "package_name": "20230927_basalabs_b8c806a83ac1e99a9856_20230927142002_archive.zip",
+    "package_hash": "b8c806a-27142002",
+    "package_notes": ""
+}
